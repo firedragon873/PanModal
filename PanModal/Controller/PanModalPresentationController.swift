@@ -106,10 +106,11 @@ open class PanModalPresentationController: UIPresentationController {
      */
     private lazy var backgroundView: DimmedView = {
         let view: DimmedView
+        let blurStyle = presentable?.panModalBlurStyle
         if let color = presentable?.panModalBackgroundColor {
-            view = DimmedView(dimColor: color)
+            view = DimmedView(dimColor: color, blurStyle: blurStyle)
         } else {
-            view = DimmedView()
+            view = DimmedView(blurStyle: blurStyle)
         }
         view.didTap = { [weak self] _ in
             if self?.presentable?.allowsTapToDismiss == true {

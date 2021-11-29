@@ -51,6 +51,10 @@ public extension PanModalPresentable where Self: UIViewController {
         return UIColor.black.withAlphaComponent(0.7)
     }
 
+    var panModalBlurStyle: UIBlurEffect.Style? {
+        nil
+    }
+
     var dragIndicatorBackgroundColor: UIColor {
         return UIColor.lightGray
     }

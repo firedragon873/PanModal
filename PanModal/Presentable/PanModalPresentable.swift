@@ -96,6 +96,13 @@ public protocol PanModalPresentable: AnyObject {
     var panModalBackgroundColor: UIColor { get }
 
     /**
+     Blur style.
+
+     Default Value is nil
+    */
+    var panModalBlurStyle: UIBlurEffect.Style? { get }
+
+    /**
      The drag indicator view color.
 
      Default value is light gray.

@@ -55,11 +55,19 @@ public class DimmedView: UIView {
 
     // MARK: - Initializers
 
-    init(dimColor: UIColor = UIColor.black.withAlphaComponent(0.7)) {
+    init(dimColor: UIColor = UIColor.black.withAlphaComponent(0.7), blurStyle: UIBlurEffect.Style? = nil) {
         super.init(frame: .zero)
         alpha = 0.0
         backgroundColor = dimColor
         addGestureRecognizer(tapGesture)
+
+        if let style = blurStyle {
+            let blurEffect = UIBlurEffect(style: style)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            self.addSubview(blurEffectView)
+        }
     }
 
     required public init?(coder aDecoder: NSCoder) {
