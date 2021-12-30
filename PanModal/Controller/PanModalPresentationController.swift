@@ -117,6 +117,9 @@ open class PanModalPresentationController: UIPresentationController {
                 self?.presentedViewController.dismiss(animated: true)
             }
         }
+        if let views = self.presentable?.passthroughViews {
+            view.passthroughViews = views
+        }
         return view
     }()
 
@@ -306,6 +309,8 @@ public extension PanModalPresentationController {
         observe(scrollView: presentable?.panScrollable)
         configureScrollViewInsets()
     }
+
+    
 
 }
 

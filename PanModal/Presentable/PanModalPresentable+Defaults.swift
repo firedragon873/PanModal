@@ -13,6 +13,8 @@ import UIKit
  */
 public extension PanModalPresentable where Self: UIViewController {
 
+    var passthroughViews: [UIView]? { nil }
+
     var topOffset: CGFloat {
         return topLayoutOffset + 21.0
     }
